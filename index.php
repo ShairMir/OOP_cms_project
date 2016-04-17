@@ -1,6 +1,47 @@
 <?php require "includes/header.php" ?>
 <?php require "includes/navigation.php" ?>
 
+<?php 
+
+try {
+      $db = new PDO('mysql:host=127.0.0.1;dbname=oop_cms', 'root', '123');
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo $e->getMessage();
+    die();
+}
+
+
+class Posts {
+
+    public  $post_id, $post_category_id, $post_title, $post_author, $post_user,
+            $post_date, $post_image, $post_content, $post_tags, 
+            $post_comment_count, $post_status, $post_views_count,
+            $entry;
+
+    public function __construct() {
+
+        $this->entry = "{$this->post_author} posted: {$this->post_content}";
+
+    }
+
+}
+
+
+
+$query = $db->query('SELECT * FROM posts');
+
+// Set fetch mode
+$query->setFetchMode(PDO::FETCH_CLASS, 'Posts');
+
+while ($row = $query->fetch()) {
+
+
+}
+
+
+ ?>
+
     <!-- Page Content -->
     <div class="container">
 
