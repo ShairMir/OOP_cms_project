@@ -1,5 +1,7 @@
 <?php require "includes/header.php" ?>
 <?php require "includes/navigation.php" ?>
+<?php require "includes/Database.class.php" ?>
+<?php require "includes/config.php" ?>
 
     <!-- Page Content -->
     <div class="container">
