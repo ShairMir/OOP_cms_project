@@ -1,7 +1,22 @@
 <?php require "includes/header.php" ?>
 <?php require "includes/navigation.php" ?>
 <?php require "includes/Database.class.php" ?>
-<?php require "includes/config.php" ?>
+<?php require "includes/Posts.class.php" ?>
+
+<?php 
+
+$posts = new Posts;
+
+var_dump($posts->post_id);
+
+echo '<pre>', print_r($posts->find_all_posts()), '</pre>';
+
+var_dump($posts->data);
+
+
+?>
+
+
 
     <!-- Page Content -->
     <div class="container">
