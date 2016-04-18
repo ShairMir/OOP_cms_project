@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+require("config.php");
 
 class Database {
 
@@ -9,18 +11,24 @@ class Database {
         $this->connection = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
         if ($this->connection->connect_errno) {
-            die("DB CONNECTION FAILED" . $this->connection->connect_error);
+            die("DB CONNECTION FAILED " . $this->connection->connect_error);
         }
 
     }
 
     public function query($sql) {
 
-    	$query = mysqli_query($this->connection, $sql);
+    	return $result = $this->connection->query($sql);
 
     }
 
-    
+    public function escape_string($string) {
+
+    	return $this->connection->real_escape_string($string);
+
+    }
+
+
 
 }
 
