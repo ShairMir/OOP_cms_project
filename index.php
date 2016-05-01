@@ -3,20 +3,9 @@
 <?php require "includes/Database.class.php" ?>
 <?php require "includes/Posts.class.php" ?>
 
-<?php 
-
-$posts = new Posts;
-
-var_dump($posts->post_id);
-
-echo '<pre>', print_r($posts->find_all_posts()), '</pre>';
-
-var_dump($posts->data);
-
+<?php
 
 ?>
-
-
 
     <!-- Page Content -->
     <div class="container">

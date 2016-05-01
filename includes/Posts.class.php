@@ -6,25 +6,7 @@ class Posts {
             $post_date, $post_image, $post_content, $post_tags, 
             $post_comment_count, $post_status, $post_views_count;
 
-    public function find_all_posts() {
 
-    	global $database;
-
-    	$sql = "SELECT * FROM posts";
-
-    	$result = $database->query($sql);
-
-    	$data = [];
-
-    	while($row = mysqli_fetch_assoc($result)) {
-
-    		$this->data[] = $row;
-
-    	}
-
-    	return $data;
-
-    }
 
 }
 
